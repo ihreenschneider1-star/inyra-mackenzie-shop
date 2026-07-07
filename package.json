@@ -1,0 +1,9 @@
+{
+  "name": "inyra-mackenzie-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Autoren-Homepage mit Shop für Inyra MacKenzie & Alina Solara",
+  "dependencies": {
+    "stripe": "^16.12.0"
+  }
+}

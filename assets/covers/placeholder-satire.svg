@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2119"/>
+      <stop offset="100%" stop-color="#16110e"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#g)"/>
+  <rect x="16" y="16" width="368" height="568" fill="none" stroke="#8a6a3f" stroke-width="1.5"/>
+  <circle cx="200" cy="230" r="70" fill="none" stroke="#b8935a" stroke-width="2"/>
+  <circle cx="200" cy="230" r="4" fill="#b8935a"/>
+  <line x1="200" y1="230" x2="200" y2="185" stroke="#b8935a" stroke-width="2"/>
+  <line x1="200" y1="230" x2="232" y2="230" stroke="#b8935a" stroke-width="2"/>
+  <text x="200" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#e8ddc7" letter-spacing="2">SATIRE</text>
+  <text x="200" y="390" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#5c7a6d">Cover folgt</text>
+</svg>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inyra MacKenzie &amp; Alina Solara — Bücher, die die Asche kennen</title>
+<meta name="description" content="Steampunk-Satire, philosophische Kammerspiele und lyrische Poesie von Inyra MacKenzie und Alina Solara." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <a href="#top" class="brand">Inyra <strong>MacKenzie</strong> &amp; Alina Solara</a>
+  <nav class="site-nav">
+    <a href="#ueber-mich">Über mich</a>
+    <a href="#shop">Bücher</a>
+    <a href="#kontakt">Kontakt</a>
+    <button class="cart-toggle" onclick="toggleCart(true)">
+      Warenkorb <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Zwei Namen, ein Werk</span>
+      <h1>Bücher, die der Asche nicht ausweichen.</h1>
+      <p class="lede">Steampunk-Satire, philosophische Kammerspiele und Lyrik über das, was bleibt, wenn man den Tod als täglichen Begleiter akzeptiert — und dadurch jeden Moment kostbarer macht.</p>
+      <div class="hero-ctas">
+        <a href="#shop" class="btn btn-primary">Zu den Büchern</a>
+        <a href="#ueber-mich" class="btn btn-ghost">Über die Autorin</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- Signatur-Element: ein Uhrwerk, das leise weiterläuft -->
+      <svg class="watch-face" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="170" cy="170" r="150" fill="none" stroke="#8a6a3f" stroke-width="1"/>
+        <g class="watch-gear" opacity="0.5">
+          <circle cx="170" cy="170" r="120" fill="none" stroke="#5c7a6d" stroke-width="1.5" stroke-dasharray="4 10"/>
+        </g>
+        <g class="watch-gear reverse" opacity="0.35">
+          <circle cx="170" cy="170" r="95" fill="none" stroke="#b8935a" stroke-width="1.5" stroke-dasharray="2 8"/>
+        </g>
+        <circle cx="170" cy="170" r="75" fill="none" stroke="#b8935a" stroke-width="2"/>
+        <text x="170" y="80" text-anchor="middle" font-family="Cinzel, serif" font-size="11" fill="#e8ddc7" letter-spacing="2">MEMENTO</text>
+        <text x="170" y="278" text-anchor="middle" font-family="Cinzel, serif" font-size="11" fill="#e8ddc7" letter-spacing="2">MORI</text>
+        <line class="watch-hand" x1="170" y1="170" x2="170" y2="110" stroke="#e8ddc7" stroke-width="2" stroke-linecap="round"/>
+        <line x1="170" y1="170" x2="210" y2="170" stroke="#7a2e2e" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="170" cy="170" r="4" fill="#e8ddc7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ BIO ============ -->
+  <section class="bio" id="ueber-mich">
+    <div class="pen-name-card">
+      <span class="role">Satire · Steampunk · Selbsthilfe · Philosophisch-literarisch</span>
+      <h3>Inyra MacKenzie</h3>
+      <p>Schreibt zwischen Zahnrädern und Theologie: bissige Satiren, in denen Jesus, Luzifer und ein Kamel namens Herbert die Gegenwart verhandeln, ebenso wie stille Kammerspiele über Schuld, Gnade und das, was von uns bleibt, wenn die Rollen abfallen.</p>
+    </div>
+    <div class="pen-name-card">
+      <span class="role">Lyrik</span>
+      <h3>Alina Solara</h3>
+      <p>Poesie, die dem Tod als ständigem Begleiter nicht ausweicht, sondern ihn zur Instanz macht, die jeden Moment schärft. Zwischen Mythos, Mystik und dem ganz konkreten Alltag.</p>
+    </div>
+  </section>
+
+  <!-- ============ SHOP ============ -->
+  <section id="shop">
+    <div class="shop-header">
+      <span class="eyebrow">Der Buchladen</span>
+      <h2>Direkt herunterladen, direkt lesen.</h2>
+      <p>Alle Titel als Download. Kein Umweg über fremde Plattformen — der Kauf läuft direkt hier über eine sichere Zahlung ab.</p>
+      <div class="filter-bar" id="filter-bar"></div>
+    </div>
+    <div class="book-grid" id="book-grid"></div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="kontakt">
+    <span class="eyebrow">Kontakt</span>
+    <h2>Schreib mir.</h2>
+    <p>Für Presse, Kooperationen oder einfach ein Wort zu den Büchern.</p>
+    <form class="contact-form" action="mailto:DEINE-EMAIL@beispiel.de" method="post" enctype="text/plain">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div>
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Absenden</button>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  © <span id="year"></span> Inyra MacKenzie &amp; Alina Solara · Hamburg
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart(false)"></div>
+<aside class="cart-drawer" id="cart-drawer">
+  <div class="cart-drawer-header">
+    <h3 style="margin:0;">Warenkorb</h3>
+    <button class="cart-close" onclick="toggleCart(false)">×</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Gesamt</span>
+      <span id="cart-total-amount">0,00 €</span>
+    </div>
+    <button class="btn btn-primary" id="checkout-btn" style="width:100%;" onclick="checkout()">Zur Kasse</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/cart.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

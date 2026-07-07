@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Danke — deine Bücher warten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="brand">Inyra <strong>MacKenzie</strong> &amp; Alina Solara</a>
+</header>
+<main>
+  <section class="shop-header" style="padding-top: 4rem;">
+    <span class="eyebrow">Zahlung erfolgreich</span>
+    <h1>Danke. Deine Bücher warten schon.</h1>
+    <p id="status-msg">Einen Moment, wir prüfen die Zahlung …</p>
+  </section>
+  <div class="book-grid" id="download-list" style="grid-template-columns: 1fr; max-width: 600px;"></div>
+</main>
+<footer class="site-footer">© <span id="year"></span> Inyra MacKenzie &amp; Alina Solara · Hamburg</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+async function loadDownloads() {
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get("session_id");
+  const statusEl = document.getElementById("status-msg");
+  const listEl = document.getElementById("download-list");
+
+  if (!sessionId) {
+    statusEl.textContent = "Keine Sitzung gefunden.";
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/verify-session?session_id=${encodeURIComponent(sessionId)}`);
+    const data = await res.json();
+
+    if (!res.ok || !data.paid) {
+      statusEl.textContent = "Die Zahlung konnte nicht bestätigt werden. Bitte melde dich, falls du bezahlt hast.";
+      return;
+    }
+
+    statusEl.textContent = "Zahlung bestätigt. Hier sind deine Downloads:";
+    listEl.innerHTML = data.items
+      .map(
+        (item) => `
+        <div class="book-card">
+          <div class="book-info">
+            <h3 class="book-title">${item.title}</h3>
+            <a class="btn btn-primary" style="margin-top:0.8rem; align-self:flex-start;" href="${item.downloadUrl}" target="_blank" rel="noopener">Herunterladen</a>
+          </div>
+        </div>`
+      )
+      .join("");
+
+    localStorage.removeItem("inyra_cart_v1");
+  } catch (err) {
+    statusEl.textContent = "Etwas ist schiefgelaufen beim Prüfen der Zahlung.";
+  }
+}
+loadDownloads();
+</script>
+</body>
+</html>
